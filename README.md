@@ -22,7 +22,7 @@ const asyncKitty = require('async-kitty');
 ```
 
 ### eachLimit
-`asyncKitty.each(coll, limit, *iteratee)`
+`asyncKitty.eachLimit(coll, limit, *iteratee)`
 >The same as each but runs a maximum of limit async operations at a time.
 ```
 * @param {Array} coll - 遍历集合
