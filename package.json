@@ -1,0 +1,27 @@
+{
+  "name": "async-kitty",
+  "version": "0.0.1",
+  "description": "async tool kit ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plusmancn/async-kitty.git"
+  },
+  "keywords": [
+    "async",
+    "generator"
+  ],
+  "author": "plusmancn@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plusmancn/async-kitty/issues"
+  },
+  "homepage": "https://github.com/plusmancn/async-kitty#readme",
+  "devDependencies": {
+    "co": "^4.6.0",
+    "should": "^11.1.2"
+  }
+}
