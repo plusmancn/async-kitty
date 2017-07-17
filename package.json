@@ -22,6 +22,7 @@
   "homepage": "https://github.com/plusmancn/async-kitty#readme",
   "devDependencies": {
     "co": "^4.6.0",
+    "eslint": "^4.2.0",
     "should": "^11.1.2"
   }
 }

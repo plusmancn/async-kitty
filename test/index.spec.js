@@ -59,4 +59,25 @@ describe('#coKit', function () {
             });
         });
     });
+
+    describe('#filterLimit', function () {
+        it('return in order with -kitty suffix', function () {
+            return co(function *() {
+                let res = yield coKit.filterLimit([
+                    'Peter',
+                    'Zulia',
+                    'Tom',
+                    'Jimmy',
+                    'Snow',
+                    'Gusting',
+                    'Robot'
+                ], 2, function *(item) {
+                    return item.length > 4;
+                });
+                
+                should(res).have.length(5);
+                res[0].should.equal('Peter');
+            });
+        });
+    });
 });

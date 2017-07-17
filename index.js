@@ -9,7 +9,7 @@
  */
 
 /**
- * alias as forEach
+ * each
  * @param {Array} coll - 遍历集合
  * @param {*Function} iteratee - 遍历函数
  * @return {Array}
@@ -21,7 +21,7 @@ function *each(coll, iteratee) {
 }
 
 /**
- * alias as forEach
+ * eachLimit
  * @param {Array} coll - 遍历集合
  * @param {Number} limit - 单次最大并发数
  * @param {*Function} iteratee - 遍历函数
@@ -39,7 +39,28 @@ function *eachLimit(coll, limit, iteratee) {
     return result;
 }
 
+/**
+ * filter
+ * @param {Array} coll - 遍历集合
+ * @param {Number} limit - 单次最大并发数
+ * @param {*Function} iteratee - 遍历函数，需要返回布尔值
+ * @return {Array}
+ */
+function *filterLimit(coll, limit, iteratee) {
+    let result = yield eachLimit(coll, limit, iteratee);
+    let rtn = [];
+    for(let i = 0; i < result.length; i++) {
+        // 过滤结果
+        if(result[i]) {
+            rtn.push(coll[i]);
+        }
+    }
+
+    return rtn;
+}
+
 module.exports =  {
-    each: each,
-    eachLimit: eachLimit
+    each,
+    eachLimit,
+    filterLimit
 };
